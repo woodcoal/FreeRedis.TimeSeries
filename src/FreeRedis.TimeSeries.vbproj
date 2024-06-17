@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.0</TargetFrameworks>
+		<AssemblyName>FreeRedis.TimeSeries</AssemblyName>
+	</PropertyGroup>
+
+	<Import Project="..\FreeRedis.TimeSeries.props" />
+	
+	<ItemGroup>
+		<PackageReference Include="FreeRedis" Version="1.2.15" />
+	</ItemGroup>
+</Project>

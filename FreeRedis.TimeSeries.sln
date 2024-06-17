@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34928.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".inc", ".inc", "{96B85D30-5795-4CE6-979A-A66F8410C9B2}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		FreeRedis.TimeSeries.props = FreeRedis.TimeSeries.props
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "FreeRedis.TimeSeries", "src\FreeRedis.TimeSeries.vbproj", "{E8205754-5DBD-49E0-A37D-8425A497BC7E}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "FreeRedis.TimeSeries.Test", "test\FreeRedis.TimeSeries.Test.vbproj", "{AB2D7495-1692-45F6-8747-BD956B8CB8EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E8205754-5DBD-49E0-A37D-8425A497BC7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8205754-5DBD-49E0-A37D-8425A497BC7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8205754-5DBD-49E0-A37D-8425A497BC7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8205754-5DBD-49E0-A37D-8425A497BC7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB2D7495-1692-45F6-8747-BD956B8CB8EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB2D7495-1692-45F6-8747-BD956B8CB8EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB2D7495-1692-45F6-8747-BD956B8CB8EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB2D7495-1692-45F6-8747-BD956B8CB8EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {79B0BE5A-560E-4611-9E1C-F9BCDBDD586A}
+	EndGlobalSection
+EndGlobal

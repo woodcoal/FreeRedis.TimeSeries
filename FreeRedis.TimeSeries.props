@@ -1,0 +1,37 @@
+﻿<Project>
+	<PropertyGroup>
+		<VersionPrefix>1.24.618.35</VersionPrefix>
+		<Product>FreeRedis.TimeSeries</Product>
+		<PackageId>$(ProjectName)</PackageId>
+		<Authors>woodcoal</Authors>
+		<Company>woodcoal.cn</Company>
+		<Copyright>Copyright © 2024 WOODCOAL</Copyright>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<NeutralLanguage>zh-CN</NeutralLanguage>
+		<isPackable>true</isPackable>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageProjectUrl>https://github.com/woodcoal/FreeRedis.TimeSeries</PackageProjectUrl>
+		<Description>基于 FreeRedis 的 Redis TimeSeries 扩展包</Description>
+		<RepositoryUrl>https://github.com/woodcoal/FreeRedis.TimeSeries</RepositoryUrl>
+		<PackageTags>FreeRedis;Redis;Redis TimeSeries</PackageTags>
+		<RepositoryType>git</RepositoryType>
+		<Title>$(AssemblyName)</Title>
+		<IsPackable>true</IsPackable>
+		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+		<WarningLevel>3</WarningLevel>
+		<SignAssembly>true</SignAssembly>
+		<DelaySign>false</DelaySign>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="../README.md" Pack="true" PackagePath="\" />
+		<None Include="../LICENSE" Pack="true" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Import Include="FreeRedis" />
+		<Import Include="FreeRedis.TimeSeries" />
+	</ItemGroup>
+</Project>
