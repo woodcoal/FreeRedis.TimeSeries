@@ -36,7 +36,8 @@ Partial Public Module TimeSeries
 		If String.IsNullOrWhiteSpace(sourceKey) OrElse String.IsNullOrWhiteSpace(destKey) Then Return False
 
 		Dim command = New CommandPacket("TS.CREATERULE").
-			Input(sourceKey, destKey).
+			InputKey(sourceKey).
+			InputKey(destKey).
 			Input("AGGREGATION", GetAggregation(aggregation), duration)
 
 		Return client.ExecteOK(command, errorMessage)
@@ -49,7 +50,10 @@ Partial Public Module TimeSeries
 	Public Function TSDeleteRule(client As RedisClient, sourceKey As String, destKey As String, Optional ByRef errorMessage As String = "") As Boolean
 		If String.IsNullOrWhiteSpace(sourceKey) OrElse String.IsNullOrWhiteSpace(destKey) Then Return False
 
-		Dim command = New CommandPacket("TS.DELETERULE").Input(sourceKey, destKey)
+		Dim command = New CommandPacket("TS.DELETERULE").
+			InputKey(sourceKey).
+			InputKey(destKey)
+
 		Return client.ExecteOK(command, errorMessage)
 	End Function
 
