@@ -37,7 +37,7 @@ Partial Public Module TimeSeries
 	Public Function TSAdd(client As RedisClient, key As String, timeStamp As TimeStamp, value As Double, Optional options As CreateOption = Nothing, Optional ByRef errorMessage As String = "") As TimeStamp
 		If String.IsNullOrWhiteSpace(key) Then Return Nothing
 
-		Dim command = New CommandPacket("TS.ADD").Input(key, timeStamp.Value, value)
+		Dim command = New CommandPacket("TS.ADD").InputKey(key).Input(timeStamp.Value, value)
 		options?.UpdateCommand(command)
 
 		Return client.ExecteTimeStamp(command, errorMessage)
@@ -53,7 +53,7 @@ Partial Public Module TimeSeries
 	Public Function TSAdd(client As RedisClient, key As String, timeStamp As Long, value As Double, Optional options As CreateOption = Nothing, Optional ByRef errorMessage As String = "") As TimeStamp
 		If String.IsNullOrWhiteSpace(key) Then Return Nothing
 
-		Dim command = New CommandPacket("TS.ADD").Input(key, New TimeStamp(timeStamp), value)
+		Dim command = New CommandPacket("TS.ADD").InputKey(key).Input(New TimeStamp(timeStamp), value)
 		options?.UpdateCommand(command)
 
 		Return client.ExecteTimeStamp(command, errorMessage)
@@ -66,7 +66,7 @@ Partial Public Module TimeSeries
 
 		Dim command = New CommandPacket("TS.MADD")
 		For Each item In data
-			command.Input(item.Key, item.TimeStamp.Value, item.Value)
+			command.InputKey(item.Key).Input(item.TimeStamp.Value, item.Value)
 		Next
 
 		Return client.ExecteTimeStampArray(command, errorMessage)
@@ -99,7 +99,7 @@ Partial Public Module TimeSeries
 	Public Function TSDecrby(client As RedisClient, key As String, value As Double, Optional timeStamp As TimeStamp = Nothing, Optional options As CreateOption = Nothing, Optional ByRef errorMessage As String = "") As TimeStamp
 		If String.IsNullOrWhiteSpace(key) Then Return Nothing
 
-		Dim command = New CommandPacket("TS.DECRBY").Input(key, value)
+		Dim command = New CommandPacket("TS.DECRBY").InputKey(key).Input(value)
 		If timeStamp IsNot Nothing Then command.Input("TIMESTAMP", timeStamp.Value)
 		options?.UpdateCommand(command)
 
@@ -115,7 +115,7 @@ Partial Public Module TimeSeries
 	Public Function TSIncrby(client As RedisClient, key As String, value As Double, Optional timeStamp As TimeStamp = Nothing, Optional options As CreateOption = Nothing, Optional ByRef errorMessage As String = "") As TimeStamp
 		If String.IsNullOrWhiteSpace(key) Then Return Nothing
 
-		Dim command = New CommandPacket("TS.INCRBY").Input(key, value)
+		Dim command = New CommandPacket("TS.INCRBY").InputKey(key).Input(value)
 		If timeStamp IsNot Nothing Then command.Input("TIMESTAMP", timeStamp.Value)
 		options?.UpdateCommand(command)
 
@@ -135,7 +135,7 @@ Partial Public Module TimeSeries
 	Public Function TSDel(client As RedisClient, key As String, timeStart As TimeStamp, timeEnd As TimeStamp, Optional ByRef errorMessage As String = "") As Long
 		If String.IsNullOrWhiteSpace(key) Then Return 0
 
-		Dim command = New CommandPacket("TS.DEL").Input(key, timeStart.Value, timeEnd.Value)
+		Dim command = New CommandPacket("TS.DEL").InputKey(key).Input(timeStart.Value, timeEnd.Value)
 		Return client.ExecteLong(command, errorMessage)
 	End Function
 

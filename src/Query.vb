@@ -97,7 +97,7 @@ Partial Public Module TimeSeries
 	Private Function TSQuery(client As RedisClient, key As String, options As QueryOption, isRev As Boolean, Optional ByRef errorMessage As String = "") As SampleBase()
 		If String.IsNullOrWhiteSpace(key) OrElse options Is Nothing Then Return Nothing
 
-		Dim command = New CommandPacket(If(isRev, "TS.REVRANGE", "TS.RANGE")).Input(key).Input(options.Expression)
+		Dim command = New CommandPacket(If(isRev, "TS.REVRANGE", "TS.RANGE")).InputKey(key).Input(options.Expression)
 		Return client.ExecteSampleBaseArray(command, errorMessage)
 	End Function
 
