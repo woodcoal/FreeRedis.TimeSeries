@@ -22,7 +22,7 @@
 Public Module Program
 
 	''' <summary>Redis 连接字符串</summary>
-	Private ReadOnly CONN As String = "10.10.10.1,password=redis"
+	Private ReadOnly CONN As String = "10.10.10.1,password=redis,prefix=AAAA:"
 
 	Public Sub Main()
 		Dim client = CreateClient()

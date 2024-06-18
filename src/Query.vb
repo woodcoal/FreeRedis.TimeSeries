@@ -50,14 +50,14 @@ Partial Public Module TimeSeries
 
 		If withLabels IsNot Nothing Then
 			If withLabels.Any Then
-				command.InputKey("SELECTED_LABELS")
+				command.Input("SELECTED_LABELS")
 				command.Input(withLabels.ToArray)
 			Else
-				command.InputKey("WITHLABELS")
+				command.Input("WITHLABELS")
 			End If
 		End If
 
-		command.InputKey("FILTER").Input(query)
+		command.Input("FILTER").Input(query)
 
 		Return client.ExecteSampleArray(command, errorMessage)
 	End Function
@@ -73,14 +73,14 @@ Partial Public Module TimeSeries
 
 		If withLabels IsNot Nothing Then
 			If withLabels.Any Then
-				command.InputKey("SELECTED_LABELS")
+				command.Input("SELECTED_LABELS")
 				command.Input(withLabels.ToArray)
 			Else
-				command.InputKey("WITHLABELS")
+				command.Input("WITHLABELS")
 			End If
 		End If
 
-		command.InputKey("FILTER").Input(filter.Expression)
+		command.Input("FILTER").Input(filter.Expression)
 
 		Return client.ExecteSampleArray(command, errorMessage)
 	End Function

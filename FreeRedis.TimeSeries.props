@@ -1,6 +1,6 @@
 ﻿<Project>
 	<PropertyGroup>
-		<VersionPrefix>1.24.618.35</VersionPrefix>
+		<VersionPrefix>1.24.619.243</VersionPrefix>
 		<Product>FreeRedis.TimeSeries</Product>
 		<PackageId>$(ProjectName)</PackageId>
 		<Authors>woodcoal</Authors>

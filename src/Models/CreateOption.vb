@@ -89,7 +89,7 @@ Namespace Model
 			If IGNORE.HasValue Then command.Input("IGNORE", IGNORE.Value.ignoreMaxTimediff, IGNORE.Value.ignoreMaxValDiff)
 
 			' LABELS
-			If LABELS?.Any Then command.InputKey("LABELS").InputKv(Of Object)(LABELS, True, Nothing)
+			If LABELS?.Any Then command.Input("LABELS").InputKv(LABELS, False, Nothing)
 
 			Return command
 		End Function
