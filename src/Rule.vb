@@ -21,7 +21,6 @@
 
 Imports System.Runtime.CompilerServices
 
-''' <summary>采样规则</summary>
 Partial Public Module TimeSeries
 
 	''' <summary>创建采样规则。（https://redis.io/commands/ts.createrule/）</summary>

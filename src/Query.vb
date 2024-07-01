@@ -23,7 +23,6 @@
 Imports System.Runtime.CompilerServices
 Imports FreeRedis.TimeSeries.Model
 
-''' <summary>数据查询</summary>
 Partial Public Module TimeSeries
 
 #Region "查询数值"
@@ -64,7 +63,6 @@ Partial Public Module TimeSeries
 
 	''' <summary>获取与特定过滤器匹配的最后一个样本。（https://redis.io/commands/ts.mget/）</summary>
 	''' <param name="withLabels">结果是否包含标签</param>
-	''' <param name="filters">查询条件</param>
 	<Extension>
 	Public Function TSMGet(client As RedisClient, filter As LabelFilter, Optional withLabels As IEnumerable(Of String) = Nothing, Optional ByRef errorMessage As String = "") As Sample()
 		If filter Is Nothing Then Return Nothing
@@ -141,7 +139,6 @@ Partial Public Module TimeSeries
 
 	''' <summary>获取多个时间序列的范围值。（https://redis.io/commands/ts.mrange/）</summary>
 	''' <param name="isRev">是否降序排序</param>
-	''' <param name="key">时间序列的键名</param>
 	''' <param name="options">搜索条件</param>
 	<Extension>
 	Private Function TSMQuery(client As RedisClient, options As QueryOptionEx, isRev As Boolean, Optional ByRef errorMessage As String = "") As SampleData()
@@ -152,7 +149,6 @@ Partial Public Module TimeSeries
 	End Function
 
 	''' <summary>获取指定序列的范围值。时间戳升序排列（https://redis.io/commands/ts.range/）</summary>
-	''' <param name="key">时间序列的键名</param>
 	''' <param name="options">搜索条件</param>
 	<Extension>
 	Public Function TSMRange(client As RedisClient, options As QueryOptionEx, Optional ByRef errorMessage As String = "") As SampleData()
@@ -160,7 +156,6 @@ Partial Public Module TimeSeries
 	End Function
 
 	''' <summary>获取指定序列的范围值。时间戳升序排列（https://redis.io/commands/ts.range/）</summary>
-	''' <param name="key">时间序列的键名</param>
 	''' <param name="timeStart">开始时间戳（包含）</param>
 	''' <param name="timeEnd">结束时间戳（包含）</param>
 	<Extension>
@@ -169,7 +164,6 @@ Partial Public Module TimeSeries
 	End Function
 
 	''' <summary>获取指定序列的范围值。时间戳降序排列（https://redis.io/commands/ts.revrange/）</summary>
-	''' <param name="key">时间序列的键名</param>
 	''' <param name="options">搜索条件</param>
 	<Extension>
 	Public Function TSMRevRange(client As RedisClient, options As QueryOptionEx, Optional ByRef errorMessage As String = "") As SampleData()
@@ -177,7 +171,6 @@ Partial Public Module TimeSeries
 	End Function
 
 	''' <summary>获取指定序列的范围值。时间戳降序排列（https://redis.io/commands/ts.revrange/）</summary>
-	''' <param name="key">时间序列的键名</param>
 	''' <param name="timeStart">开始时间戳（包含）</param>
 	''' <param name="timeEnd">结束时间戳（包含）</param>
 	<Extension>

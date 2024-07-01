@@ -22,7 +22,6 @@
 Imports System.Runtime.CompilerServices
 Imports FreeRedis.TimeSeries.Model
 
-''' <summary>数据增改删</summary>
 Partial Public Module TimeSeries
 
 #Region "增加数据"

@@ -1,6 +1,6 @@
 ﻿<Project>
 	<PropertyGroup>
-		<VersionPrefix>1.24.619.422</VersionPrefix>
+		<VersionPrefix>1.24.702.339</VersionPrefix>
 		<Product>FreeRedis.TimeSeries</Product>
 		<PackageId>$(ProjectName)</PackageId>
 		<Authors>woodcoal</Authors>
@@ -23,6 +23,7 @@
 		<SignAssembly>true</SignAssembly>
 		<DelaySign>false</DelaySign>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 	</PropertyGroup>
 
 	<ItemGroup>

@@ -22,7 +22,6 @@
 Imports System.Runtime.CompilerServices
 Imports FreeRedis.TimeSeries.Model
 
-''' <summary>结果转换相关操作</summary>
 Partial Public Module TimeSeries
 
 	''' <summary>执行并转换成指定类型</summary>
@@ -187,7 +186,7 @@ Partial Public Module TimeSeries
 					Info.ChunkType = If("UNCOMPRESSED".Equals(item?.ToString, StringComparison.OrdinalIgnoreCase), EncodingEnum.UNCOMPRESSED, EncodingEnum.COMPRESSED)
 
 				Case "duplicatePolicy"
-					Info.DuplicatePolicy = getDuplicatePolicyEnum(item)
+					Info.DuplicatePolicy = GetDuplicatePolicyEnum(item)
 
 				Case "labels"
 					Info.Labels = GetLabels(item)
@@ -196,13 +195,13 @@ Partial Public Module TimeSeries
 					Info.SourceKey = item
 
 				Case "rules"
-					Info.Rules = getRules(item)
+					Info.Rules = GetRules(item)
 
 				Case "keySelfName"
 					Info.KeySelfName = item
 
 				Case "Chunks"
-					Info.Chunks = getChunk(item)
+					Info.Chunks = GetChunk(item)
 			End Select
 		Next
 
@@ -267,7 +266,7 @@ Partial Public Module TimeSeries
 			Dim key = data(0)?.ToString
 			Dim labels = GetLabels(data(1))
 			Dim values = GetSampleBases(data(2))
-			If values?.Length > 1 Then Return New SampleData With {.labels = labels, .key = key, .values = values}
+			If values?.Length > 1 Then Return New SampleData With {.Labels = labels, .Key = key, .Values = values}
 		End If
 
 		Return Nothing

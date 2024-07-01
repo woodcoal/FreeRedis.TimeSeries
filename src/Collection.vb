@@ -23,7 +23,6 @@ Imports System.Runtime.CompilerServices
 Imports FreeRedis.TimeSeries.Model
 
 
-''' <summary>数据集处理</summary>
 Partial Public Module TimeSeries
 
 	''' <summary>创建一个新的时间序列。（https://redis.io/commands/ts.create/）</summary>
@@ -69,7 +68,6 @@ Partial Public Module TimeSeries
 	End Function
 
 	''' <summary>查询所有匹配的序列。（https://redis.io/commands/ts.queryindex/）</summary>
-	''' <param name="filters">查询条件</param>
 	<Extension>
 	Public Function TSQueryIndex(client As RedisClient, filter As LabelFilter, Optional ByRef errorMessage As String = "") As String()
 		If filter Is Nothing Then Return Nothing
