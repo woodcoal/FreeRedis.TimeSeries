@@ -61,7 +61,6 @@ Namespace Model
 		End Function
 
 		''' <summary>生成表达式</summary>
-		''' <param name="singleRule">是否生成单挑规则，单条将忽略 Or 逻辑操作</param>
 		Public ReadOnly Property Expression As String
 			Get
 				With New StringBuilder

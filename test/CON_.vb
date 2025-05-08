@@ -37,7 +37,7 @@ Public Class CON
 	End Sub
 
 	''' <summary>应用结束</summary>
-	Public Shared Sub AppFinish(Optional information As String = "", Optional showPressKey As Boolean = True)
+	Public Shared Sub AppFinish(Optional showPressKey As Boolean = True)
 		Echo("应用执行完成")
 		Echo()
 		If showPressKey Then Wait("按任意键退出系统...", True)
@@ -189,11 +189,7 @@ Public Class CON
 	''' <summary>输出一组字符到控制台，并用指定字符区分</summary>
 	Public Shared Sub Echo(informationList As Object(), Optional splitString As String = vbTab)
 		If informationList?.Length > 0 Then
-			If informationList.Length > 1 Then
-				Echo(String.Join(splitString, informationList))
-			Else
-				Echo(informationList(0))
-			End If
+			Echo(String.Join(splitString, informationList))
 		Else
 			Echo()
 		End If

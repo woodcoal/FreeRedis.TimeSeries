@@ -41,7 +41,6 @@ Namespace Model
 		End Property
 
 		''' <summary>构造，使用当前时间戳</summary>
-		''' <param name="type">时间类型</param>
 		Public Sub New()
 			Type = TimeStampEnum.NOW
 			Ticks = Nothing

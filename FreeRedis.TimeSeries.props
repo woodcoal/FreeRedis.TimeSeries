@@ -1,34 +1,34 @@
 ﻿<Project>
 	<PropertyGroup>
-		<VersionPrefix>1.24.702.339</VersionPrefix>
+		<VersionPrefix>1.24.702.649</VersionPrefix>
 		<Product>FreeRedis.TimeSeries</Product>
 		<PackageId>$(ProjectName)</PackageId>
 		<Authors>woodcoal</Authors>
 		<Company>woodcoal.cn</Company>
 		<Copyright>Copyright © 2024 WOODCOAL</Copyright>
-		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<NeutralLanguage>zh-CN</NeutralLanguage>
-		<isPackable>true</isPackable>
-		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<isPackable>True</isPackable>
 		<PackageProjectUrl>https://github.com/woodcoal/FreeRedis.TimeSeries</PackageProjectUrl>
 		<Description>基于 FreeRedis 的 Redis TimeSeries 扩展包</Description>
 		<RepositoryUrl>https://github.com/woodcoal/FreeRedis.TimeSeries</RepositoryUrl>
 		<PackageTags>FreeRedis;Redis;Redis TimeSeries</PackageTags>
 		<RepositoryType>git</RepositoryType>
 		<Title>$(AssemblyName)</Title>
-		<IsPackable>true</IsPackable>
-		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+		<IsPackable>True</IsPackable>
+		<GenerateAssemblyInfo>True</GenerateAssemblyInfo>
 		<WarningLevel>3</WarningLevel>
-		<SignAssembly>true</SignAssembly>
-		<DelaySign>false</DelaySign>
+		<SignAssembly>True</SignAssembly>
+		<DelaySign>False</DelaySign>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<None Include="../README.md" Pack="true" PackagePath="\" />
-		<None Include="../LICENSE" Pack="true" PackagePath="\" />
+		<None Include="../README.md" Pack="True" PackagePath="\" />
+		<None Include="../LICENSE" Pack="True" PackagePath="\" />
 	</ItemGroup>
 
 	<ItemGroup>
